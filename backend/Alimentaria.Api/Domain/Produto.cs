@@ -9,5 +9,6 @@ namespace Alimentaria.Api.Domain
         public string Local { get; set; }
         public string Endereco { get; set; }
         public string Imagem { get; set; }
+        public string UrlEstabelecimento { get; set; }
     }
 }
