@@ -11,7 +11,10 @@ interface ResultadoPesquisaProps {
 const ResultadoPesquisa = (props: ResultadoPesquisaProps) => {
     return (
         <S.Container>
-            <S.ContadorResultados>Econtramos {props.produtosEncontrados.length} produtos para {props.produtoPesquisado}</S.ContadorResultados>
+            <S.Header>
+                <S.ContadorResultados>Econtramos {props.produtosEncontrados.length} produtos para {props.produtoPesquisado}</S.ContadorResultados>
+                <p>Classificar por Preço</p>
+            </S.Header>
             <S.GridContainer>
                 {props.produtosEncontrados.map(produto => {
                    return <ProdutoItem imagem={produto.imagem} 
@@ -19,7 +22,8 @@ const ResultadoPesquisa = (props: ResultadoPesquisaProps) => {
                     categoria={produto.categoria}
                     preco={produto.preco}
                     local={produto.local}
-                    endereco={produto.endereco} />
+                    endereco={produto.endereco} 
+                    urlEstabelecimento={produto.urlEstabelecimento}/>
                 })}
             </S.GridContainer>
             <S.Paginacao>

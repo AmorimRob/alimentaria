@@ -21,7 +21,7 @@ const Pesquisa = (props: PesquisaProps) => {
         <Container>
             <Header>
                 <Stack spacing={4} style={{ width: '100%', alignItems: 'center'}}>
-                    <InputGroup style={{width: '80%', alignItems: 'center'}}>
+                    <InputGroup style={{width: '70%', alignItems: 'center'}}>
                         <InputLeftElement children={<SearchIcon color="#cfcfd3" />} />
                         <Input 
                             onChange={(e)=>props.setTextoPesquisa(e.target.value)} 

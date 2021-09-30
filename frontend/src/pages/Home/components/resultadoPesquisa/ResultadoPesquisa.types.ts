@@ -4,5 +4,6 @@ export type Produto = {
     categoria: string,
     preco: number,
     local: string,
-    endereco: string
+    endereco: string,
+    urlEstabelecimento: string
 }

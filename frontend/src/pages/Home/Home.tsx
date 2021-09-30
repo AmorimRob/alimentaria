@@ -6,6 +6,9 @@ import Lottie from 'react-lottie';
 import loading from '../../assets/loading.json'
 import { obterProdutos } from './services/Home.service'
 import { Produto } from './components/resultadoPesquisa/ResultadoPesquisa.types'
+import { FiHeart, FiMap, FiPlusCircle } from "react-icons/fi";
+import { BsQuestionCircle } from "react-icons/bs";
+import logo from '../../assets/logo.png'
 
 const Home = () => {
 
@@ -30,15 +33,27 @@ const Home = () => {
 
     return <>
         <S.Container>
-            
-            <Pesquisa handlePesquisar={handlePesquisarProdutos} textoPesquisa={textoPesquisa} setTextoPesquisa={setTextoPesquisa}  />
-            
-            {carregando ? <Lottie options={defaultOptions} height={200} width={200} /> : null}
 
-            {produtosEncontrados  && carregando === false 
-            ? <ResultadoPesquisa produtoPesquisado={textoPesquisa} produtosEncontrados={produtosEncontrados} /> 
-            : <S.BoasVindas hidden={carregando}>O que quer comer hoje? :)</S.BoasVindas>}
+            <S.Menu>
+                <S.Logo src={logo} alt="Alimentária"/> 
 
+                <S.MenuItensContainer>
+                    <FiMap style={{color: '#71bce4', fontSize: '35px', marginBottom: '50px'}} />
+                    <FiHeart style={{color: '#71bce4', fontSize: '35px', marginBottom: '50px'}}/>
+                    <FiPlusCircle style={{color: '#71bce4', fontSize: '35px', marginBottom: '50px'}}/>
+                    <BsQuestionCircle style={{color: '#71bce4', fontSize: '35px', marginBottom: '50px'}}/>
+                </S.MenuItensContainer>
+            </S.Menu>
+
+            <S.ContainerPesqusia>
+                <Pesquisa handlePesquisar={handlePesquisarProdutos} textoPesquisa={textoPesquisa} setTextoPesquisa={setTextoPesquisa}  />
+                
+                {carregando ? <Lottie options={defaultOptions} height={200} width={200} /> : null}
+
+                {produtosEncontrados  && carregando === false 
+                ? <ResultadoPesquisa produtoPesquisado={textoPesquisa} produtosEncontrados={produtosEncontrados} /> 
+                : <S.BoasVindas hidden={carregando}>O que quer comer hoje? :)</S.BoasVindas>}
+            </S.ContainerPesqusia>
         </S.Container>
     </>
 }

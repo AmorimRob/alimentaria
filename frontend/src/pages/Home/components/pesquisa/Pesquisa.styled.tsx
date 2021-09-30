@@ -5,22 +5,23 @@ export const Container = styled.div`
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 100%;
+    padding-left: 100px;
+    margin-bottom: 20px;
 `
 
 export const Opcoes = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: flex-start;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 70%;
+    width: 100%;
 `
 
 export const Header = styled.div`
     display: flex;
     align-items: center;
     text-align: center;
-    width: 90%;
+    width: 100%;
     margin-bottom: .625rem;
     flex-direction: column;
     padding-top: 3.125rem; 
